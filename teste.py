@@ -1,10 +1,10 @@
 import streamlit as st
 st.write('Hello world')
 
-st.title("Este é o título do app")
-st.header("Este é o subtítulo")
-st.subheader("Este é o terceiro subtítulo")
-st.markdown("Este é texto")
-st.caption("Esta é a a legenda")
-st.code("x=2021")
+st.title("Relatório Gerencial Demandas TCU")
+st.header("Exercício 2024")
+st.subheader("Atendimento a diligências e acórdãos")
+st.markdown("Neste relatório serão apresentados graficamente a quantidade de demandas recebidas pelo MPO em 2024, assim como as providências tomadas em relação a elas, agregadas por tema e secretaria responsável")
+st.caption("Tanto o quantitativo de diligências será mensurado pelo número de ofícios e o de acórdãos será pelo número de itens atendidos")
+st.code("x=2024")
 st.latex(r''' a+a r^1+a r^2+a r^3 ''')
