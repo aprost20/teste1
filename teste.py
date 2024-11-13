@@ -8,3 +8,5 @@ st.markdown("Neste relatório serão apresentados graficamente a quantidade de d
 st.caption("O quantitativo de diligências será mensurado pelo número de ofícios e o de acórdãos será pelo número de itens atendidos")
 st.code("x=2024")
 st.latex(r''' a+a r^1+a r^2+a r^3 ''')
+
+st.select_slider('Selecione o seu grau de satisfação', ['Ruim', 'Bom', 'Excelente'])
