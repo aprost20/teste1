@@ -10,3 +10,4 @@ st.code("x=2024")
 st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
 st.select_slider('Selecione o seu grau de satisfação', [0,100])
+st.number_input('Selecione o seu grau de satisfação', 0,100)
