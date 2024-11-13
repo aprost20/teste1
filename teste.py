@@ -9,5 +9,7 @@ st.caption("O quantitativo de diligências será mensurado pelo número de ofíc
 st.code("x=2024")
 st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
-st.slider('Selecione o seu grau de satisfação', 0,100)
-st.number_input('Selecione o seu grau de satisfação', 0,100)
+resposta_num = st.slider('Selecione o seu grau de satisfação', 0,100)
+resposta_dig = st.number_input('Selecione o seu grau de satisfação', 0,100)
+st.write(resposta_num)
+st.write(resposta_dig)
