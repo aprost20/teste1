@@ -1,2 +1,6 @@
+import pandas as pd
+import plotly.express as px
 import streamlit as st
-st.title('Criando uma tabela')
+
+st.set_page_config(page_title = "Demandas TCU 2024", layout = "wide")
+df = pd.read_excel('/content/Demandas2024.xlsx', sheet_name = 0)
