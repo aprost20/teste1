@@ -15,7 +15,7 @@ try:
     response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
 
     # Ler o conteúdo do Excel
- df = pd.read_excel(io.BytesIO(response.content))
+    df = pd.read_excel(io.BytesIO(response.content))
 
  st.write("### Demandas TCU 2024")
  st.dataframe(df)
