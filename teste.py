@@ -13,7 +13,7 @@ fig1, fig2 = st.columns(2)
 
 with fig1:
   quantidades = df['estado_SISCOD'].value_counts()
-  st.bar_chart(quantidades, x = ""Quantidade de itens demandados")
+  st.bar_chart(quantidades, x = "Quantidade de itens demandados")
   
 
 
