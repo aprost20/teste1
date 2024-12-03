@@ -6,8 +6,8 @@ import requests as rq
 # Título do dashboard
 st.title('Demandas TCU recebidas pelo MPO em 2024')
 
-df = pd.read_excel('https://raw.githubusercontent.com/aprost20/teste1/main/Demandas2024.xlsx')
-st.write(df)
+def get_data_from_excel():
+ df = pd.read_excel( io = '/content/Demandas2024.xlsx', engine = 'openpyxl', sheet_name = 'None', usecols = 'A:Z', nrows = 262)
 
 
 
