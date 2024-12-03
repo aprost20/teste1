@@ -7,7 +7,7 @@ import requests as rq
 st.title('Demandas TCU recebidas pelo MPO em 2024')
 
 df = pd.read_excel('https://github.com/aprost20/teste1/blob/main/Demandas2024.xlsx')
-st.dataframe(df)
+st.write(df)
 
 
 
