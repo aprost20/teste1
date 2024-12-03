@@ -1,3 +1,10 @@
+import sys
+import subprocess
+
+# Lista de pacotes instalados no ambiente
+installed_packages = subprocess.check_output([sys.executable, '-m', 'pip', 'list'])
+st.text(installed_packages.decode())
+
 import pandas as pd
 import streamlit as st
 import io
