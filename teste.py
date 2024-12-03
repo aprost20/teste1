@@ -18,6 +18,6 @@ try:
     df = pd.read_excel(io.BytesIO(response.content))
 
  st.write("### Demandas TCU 2024")
-    st.dataframe(df)
+ st.dataframe(df)
 
    
