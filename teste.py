@@ -15,6 +15,6 @@ try:
     response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
 
     # Ler o conteúdo do Excel
-    df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+    df = pd.read_excel(io.BytesIO(response.content))
 
    
