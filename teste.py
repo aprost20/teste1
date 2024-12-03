@@ -6,8 +6,8 @@ import requests as rq
 # Título do dashboard
 st.title('Demandas TCU recebidas pelo MPO em 2024')
 
-# URL do arquivo Excel no GitHub
-url = 'https://raw.githubusercontent.com/aprost20/teste1/main/Demandas2024.xlsx'
+df = pd.read_excel('/content/Demandas2024.xlsx')
+st.dataframe(df)
 
 
 
