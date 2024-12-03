@@ -1,9 +1,4 @@
-import sys
-import subprocess
 
-# Lista de pacotes instalados no ambiente
-installed_packages = subprocess.check_output([sys.executable, '-m', 'pip', 'list'])
-st.text(installed_packages.decode())
 
 import pandas as pd
 import streamlit as st
@@ -22,7 +17,7 @@ try:
     response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
 
     # Ler o conteúdo do Excel
-    df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+    df = pd.read_excel(io.BytesIO(response.content))
 
     # Exibir uma tabela com os dados
     st.write("### Demandas TCU 2024")
