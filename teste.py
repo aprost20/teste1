@@ -13,10 +13,8 @@ fig1, fig2 = st.columns(2)
 
 with fig1:
   quantidades = df['estado_SISCOD'].value_counts()
-  fig1 = px.bar(quantidades, text_auto = True, orientation = 'h')
-  fig1.update_layout(title = 'Demandas TCU x Situação', xaxis_title = "Quantidade de itens demandados", yaxis_title = "Situação")
-  st.plotly_chart(fig1, use_container_width = True)
-
+  st.bar_chart(quantidades, x = ""Quantidade de itens demandados")
+  
 
 
 
