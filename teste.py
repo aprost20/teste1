@@ -1,5 +1,3 @@
-
-
 import pandas as pd
 import streamlit as st
 import io
@@ -17,7 +15,7 @@ try:
     response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
 
     # Ler o conteúdo do Excel
-    df = pd.read_excel(io.BytesIO(response.content))
+    df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
 
     # Exibir uma tabela com os dados
     st.write("### Demandas TCU 2024")
