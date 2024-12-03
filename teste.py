@@ -1,8 +1,14 @@
 import pandas as pd
-import plotly.express as px
 import streamlit as st
+import io
+import requests
 
-st.set_page_config(page_title = "Demandas TCU 2024", layout = "wide")
-st.title("Demandas TCU recebidas pelo MPO em 2024")
+st.title('Demandas TCU recebidas pelo MPO em 2024')
 
-df = pd.read_excel('https://github.com/aprost20/teste1/blob/main/Demandas2024.xlsx', sheet_name = 0)
+url = 'https://raw.githubusercontent.com/aprost20/teste1/main/Demandas2024.xlsx'
+response = requests.get(url)
+response.raise_for_status() 
+
+df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl') 
+
+st.write("Demandas TCU 2024")
