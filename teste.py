@@ -18,6 +18,6 @@ try:
     # Ler o conteúdo do Excel
     df = pd.read_excel(io.BytesIO(response.content))
 
- st.dataframe(df)
+ 
 
    
