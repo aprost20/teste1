@@ -8,7 +8,7 @@ st.set_page_config(page_title="Demandas TCU 2024", layout="wide")
 df = pd.read_excel('Demandas2024.xlsx', sheet_name=0)
 
 st.title("Demandas TCU recebidas pelo MPO em 2024")
-st.markdown("Trata-se de relatório gerencial que apresenta as entregas da AECI-MPO e das demais unidades do MPO no que tange às demandas provenientes do Tribunal de Contas da União (TCU) no ano de 2024.")
+st.subheader("Trata-se de relatório gerencial que apresenta as entregas da AECI-MPO e das demais unidades do MPO no que tange às demandas provenientes do Tribunal de Contas da União (TCU) no ano de 2024.")
 
 col1, col2 = st.columns(2)
 
