@@ -13,7 +13,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     quantidades = df['estado_SISCOD'].value_counts()
-    fig1 = px.bar(quantidades, text_auto=True, orientation='h')
+    fig1 = px.bar(quantidades, text_auto=True, orientation='h', color_discrete_sequence=['#3357FF'])
     fig1.update_layout(
         title='Demandas TCU x Situação',
         xaxis_title="Quantidade de itens demandados",
