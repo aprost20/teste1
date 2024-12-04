@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
+streamlit run nome_do_arquivo.py --logger.level=debug
+
 st.set_page_config(page_title="Demandas TCU 2024", layout="wide")
 
 # Carregar arquivo via upload
