@@ -64,3 +64,6 @@ with col6:
   fig6 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig6.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
+
+st.subheader("Segue o link para acesso à base de dados obtida do SISCOD:"
+st.file_uploader('Demandas2024.xlsx', sheet_name=0')
