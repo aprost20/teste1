@@ -31,5 +31,21 @@ with col2:
     )
     st.plotly_chart(fig2, use_container_width=True)
 
+col3, col4 = st.columns(2)
+
+with col3:
+  qnt_dem_respons = df['responsavel'].value_counts()
+  fig3 = px.bar(qnt_dem_respons, text_auto = True)
+  fig3.update_layout(title = 'Demandas por unidade do MPO', xaxis_title = "Unidade demandada", yaxis_title = "Quantidade de itens")
+  st.plotly_chart(fig3, use_container_width = True)
+
+with col4:
+  del_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
+  filtro_del = del_acordao['Ato'].value_counts()
+  fig4 = px.bar(filtro_del, text_auto = True)
+  fig4.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
+  st.plotly_chart(fig4, use_container_width = True)
+
+
 
 
