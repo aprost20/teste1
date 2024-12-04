@@ -46,6 +46,25 @@ with col4:
   fig4.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
   st.plotly_chart(fig4, use_container_width = True)
 
+col5, col6 = st.columns(2)
+
+with col5:
+  tratamento_det = df.query('Ato == "Determinação"')
+  tratamento_det['Ato'].value_counts()
+  filtro_tto_det = tratamento_det['tratamento'].value_counts()
+  fig5 = px.bar(filtro_tto_det, text_auto = True)
+  fig5.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  st.plotly_chart(fig5, use_container_width = True)
+
+with col6:
+  tratamento_rec = df.query('Ato == "Recomendação"')
+  tratamento_rec['Ato'].value_counts()
+  filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
+  fig6 = px.bar(filtro_tto_rec, text_auto = True)
+  fig6.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  st.plotly_chart(fig6, use_container_width = True)
+
+
 
 
 
