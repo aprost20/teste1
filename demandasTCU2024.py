@@ -66,4 +66,4 @@ with col6:
   st.plotly_chart(fig6, use_container_width = True)
 
 st.subheader("Segue o link para acesso à base de dados obtida do SISCOD:"
-st.file_uploader('Demandas2024.xlsx', sheet_name=0')
+st.file_uploader('Demandas2024.xlsx', sheet_name=0)
