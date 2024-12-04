@@ -9,5 +9,5 @@ df = pd.read_excel('Demandas2024.xlsx', sheet_name=0)
 
 st.title("Demandas TCU recebidas pelo MPO em 2024")
 
-streamlit run teste.py
+
 
