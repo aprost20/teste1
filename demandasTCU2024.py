@@ -19,6 +19,7 @@ with col1:
         xaxis_title="Quantidade de itens demandados",
         yaxis_title="Situação"
     )
+    fig1.update_traces(marker_color='#FF5733')
     st.plotly_chart(fig1, use_container_width=True)
 
 with col2:
