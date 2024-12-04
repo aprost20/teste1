@@ -2,8 +2,6 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-streamlit run nome_do_arquivo.py --logger.level=debug
-
 st.set_page_config(page_title="Demandas TCU 2024", layout="wide")
 
 # Carregar arquivo via upload
@@ -15,5 +13,10 @@ if uploaded_file:
     # Continue com o restante do código...
 else:
     st.warning("Por favor, carregue um arquivo para visualizar os dados.")
+
+import pandas as pd
+
+df = pd.read_excel("Demandas2024.xlsx", sheet_name=0)
+print(df.head())
 
    
