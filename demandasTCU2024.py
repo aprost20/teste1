@@ -16,7 +16,7 @@ with col1:
     quantidades = df['estado_SISCOD'].value_counts()
     fig1 = px.bar(quantidades, text_auto=True, orientation='h', color_discrete_sequence=['#2237FF'])
     fig1.update_layout(
-        title='Demandas TCU x Situação',
+        title='Demandas TCU x Situação atual',
         xaxis_title="Quantidade de itens demandados",
         yaxis_title="Situação"
     )
@@ -26,7 +26,7 @@ with col2:
     tipo_demanda = df['tipo_processo'].value_counts()
     fig2 = px.bar(tipo_demanda, text_auto=True, color_discrete_sequence=['#2237FF'])
     fig2.update_layout(
-        title='Ofícios TCU 2024',
+        title='Ofícios TCU recebidos pelo MPO em 2024',
         xaxis_title="Tipo de Processo TCU",
         yaxis_title="Quantidade Ofícios recebidos"
     )
