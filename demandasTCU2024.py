@@ -40,39 +40,39 @@ with col3:
   st.plotly_chart(fig3, use_container_width = True)
 
 with col4:
-  del_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
-  filtro_del = del_acordao['Ato'].value_counts()
-  fig4 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig4.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
+  no_prazo_counts = df['no_prazo'].value_counts().reset_index()
+  no_prazo_counts.columns = ['no_prazo', 'valor_no_prazo']
+  fig4 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo', color_discrete_sequence=px.colors.qualitative.Set2)
+  fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo')
   st.plotly_chart(fig4, use_container_width = True)
+
 
 col5, col6 = st.columns(2)
 
 with col5:
+  del_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
+  filtro_del = del_acordao['Ato'].value_counts()
+  fig5 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])
+  fig5.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
+  st.plotly_chart(fig5, use_container_width = True)
+  
+with col6:
   tratamento_det = df.query('Ato == "Determinação"')
   tratamento_det['Ato'].value_counts()
   filtro_tto_det = tratamento_det['tratamento'].value_counts()
-  fig5 = px.bar(filtro_tto_det, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig5.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
-  st.plotly_chart(fig5, use_container_width = True)
-
-with col6:
-  tratamento_rec = df.query('Ato == "Recomendação"')
-  tratamento_rec['Ato'].value_counts()
-  filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
-  fig6 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig6.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  fig6 = px.bar(filtro_tto_det, text_auto = True, color_discrete_sequence=['#2237FF'])
+  fig6.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
 
 col7, col8 = st.columns(2)
 
 with col7:
-  no_prazo_counts = df['no_prazo'].value_counts().reset_index()
-  no_prazo_counts.columns = ['no_prazo', 'valor_no_prazo']
-  fig7 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo', color_discrete_sequence=px.colors.qualitative.Set2)
-  fig7.update_layout(title = 'Atendimento às demandas quanto ao prazo')
+  tratamento_rec = df.query('Ato == "Recomendação"')
+  tratamento_rec['Ato'].value_counts()
+  filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
+  fig7 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
+  fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
-
 
 
 
