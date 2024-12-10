@@ -67,8 +67,9 @@ with col6:
 col7, col8 = st.columns(2)
 
 with col17:
-  no_prazo_counts = df['no_prazo'].value_counts()
-  fig7 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo')
+  no_prazo_counts = df['no_prazo'].value_counts().reset_index()
+  no_prazo_counts.columns = ['no_prazo', 'valor_no_prazo']
+  fig7 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo', color_discrete_sequence=px.colors.qualitative.Set2)
   fig7.update_layout(title = 'Atendimento às demandas quanto ao prazo')
   st.plotly_chart(fig7, use_container_width = True)
 
