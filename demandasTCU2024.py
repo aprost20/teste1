@@ -67,12 +67,9 @@ with col6:
 col7, col8 = st.columns(2)
 
 with col17:
-    no_prazo_counts = df['no_prazo'].value_counts()
-    
-    plt.figure(figsize = (8,8))
-    no_prazo_counts.plot.pie(autopct = '%1.1f%%', startangle=90, colors=['#66b3ff', '#99ff99', '#ffcc99'])
-    plt.title('Atendimento às demandas quanto ao prazo')
-    plt.ylabel('')  # Remover o rótulo do eixo Y
-    plt.show()  
+  fig7 = px.pie(df, values = 'valor_no_prazo', names = 'no _prazo')
+  fig7.update_layout(title = 'Atendimento às demandas quanto ao prazo')
+  st.plotly_chart(fig7, use_container_width = True)
+
 
 
