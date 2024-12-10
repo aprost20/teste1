@@ -64,6 +64,14 @@ with col6:
   fig6.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
 
+col7, col8 = st.columns(2)
+
+with col17:
+  no_prazo_counts = df['no_prazo'].value_counts()
+  fig7 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo')
+  fig7.update_layout(title = 'Atendimento às demandas quanto ao prazo')
+  st.plotly_chart(fig7, use_container_width = True)
+
 
 
 
