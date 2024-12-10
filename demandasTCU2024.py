@@ -67,7 +67,7 @@ with col6:
 col7, col8 = st.columns(2)
 
 with col17:
-  fig7 = px.pie(df, values = 'valor_no_prazo', names = 'no _prazo')
+  fig7 = px.pie(df, values = 'valor_no_prazo', names = 'no_prazo')
   fig7.update_layout(title = 'Atendimento às demandas quanto ao prazo')
   st.plotly_chart(fig7, use_container_width = True)
 
