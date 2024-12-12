@@ -12,9 +12,9 @@ st.title("Demandas TCU recebidas pelo MPO em 2024")
 col1, col2 = st.columns(2)
 
 with col1:
-    quantidades = df['estado_SISCOD'].value_counts().reset_index()
-    quantidades.columns = ['estado_SISCOD', 'qnt_estado']
-    fig1 = px.pie(quantidades, values = 'qnt_SISCOD', names = 'estado_SISCOD', color_discrete_sequence=px.colors.qualitative.Set2)
+    quantidades_counts = df['estado_SISCOD'].value_counts().reset_index()
+    quantidades_counts.columns = ['estado_SISCOD', 'quant_estado']
+    fig1 = px.pie(quantidades, values = 'quant_SISCOD', names = 'estado_SISCOD', color_discrete_sequence=px.colors.qualitative.Set2)
     fig1.update_layout(title = 'Demandas TCU x Situação atual - por quantidade de itens demandados')
     st.plotly_chart(fig1, use_container_width = True)
  
