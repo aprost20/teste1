@@ -74,7 +74,7 @@ with col7:
 
 with col8:
   atend_acordao = df2.query('Ato == "Determinação" or Ato == "Recomendação"')
-  fig8 = px.bar(atend_acordao, x = 'ano_acordao', y = 'valor_ano', color = 'Ato', text_auto = True, color_discrete_sequence=['#2237FF'])  
+  fig8 = px.bar(atend_acordao, x = 'ano_acordao', y = 'valor_ano', color = 'Ato', text_auto = True)  
   fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig8, use_container_width = True)
 
