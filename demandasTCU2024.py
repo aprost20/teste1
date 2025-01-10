@@ -6,7 +6,7 @@ st.set_page_config(page_title="Demandas TCU 2024", layout="wide")
 
 # Carregamento do arquivo Excel
 df = pd.read_excel('Demandas_2024_1.xlsx', sheet_name=0)
-df2 = pd.read_excel('acordaos_atendidos_gestãoMPO.xlsx', sheet_name=0)
+df2 = pd.read_excel('acordaos_atendidos_gestãoMPO_1.xlsx', sheet_name=0)
 
 st.title("Demandas TCU recebidas pelo MPO em 2024")
 
@@ -73,10 +73,11 @@ with col7:
   st.plotly_chart(fig7, use_container_width = True)
 
 with col8:
-  atend_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
-  filtro_del = del_acordao['Ato'].value_counts()
-  fig5 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])  
-  long_df2 = px.data.
+  atend_acordao = df.query('Ato == "Determinação" or Ato == "Recomendação"', 'ano_acordao == 2019 or ano_acordao == 2019 or ano_acordao == 2020 or ano_acordao == 2022 or ano_acordao == 2023 or ano_acordao == 2024')
+  filtro_acordao = atend_acordao['ano_acordao'].value_counts()
+  fig8 = px.bar(filtro_acordao, text_auto = True, color_discrete_sequence=['#2237FF'])  
+  fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
+  st.plotly_chart(fig8, use_container_width = True)
 
 
 
