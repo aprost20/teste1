@@ -73,7 +73,10 @@ with col7:
   st.plotly_chart(fig7, use_container_width = True)
 
 with col8:
-    
+  atend_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
+  filtro_del = del_acordao['Ato'].value_counts()
+  fig5 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])  
+  long_df2 = px.data.
 
 
 
