@@ -20,7 +20,7 @@ with col1:
  
 with col2:
     tipo_demanda = df['tipo_processo'].value_counts()
-    fig2 = px.bar(tipo_demanda, text_auto=True, color_discrete_sequence=['#2237FF'])
+    fig2 = px.bar(tipo_demanda, text_auto=True, color_discrete_sequence=['#183EFF'])
     fig2.update_layout(
         title='Demandas por tipo de Processo TCU',
         xaxis_title="Tipo de Processo",
