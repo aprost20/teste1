@@ -71,6 +71,8 @@ with col7:
   fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
 
+with col8:
+    
 
 
 
