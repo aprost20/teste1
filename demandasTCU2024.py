@@ -38,11 +38,12 @@ with col3:
   st.plotly_chart(fig3, use_container_width = True)
 
 with col4:
-  no_prazo_counts = df['no_prazo'].value_counts().reset_index()
-  no_prazo_counts.columns = ['no_prazo', 'valor_no_prazo']
-  fig4 = px.pie(no_prazo_counts, values = 'valor_no_prazo', names = 'no_prazo', color_discrete_sequence=px.colors.qualitative.Set2)
-  fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo')
+ 
+  no_prazo = df.query('no_prazo == "Sem_prazo" or no_prazo == "Em andamento" or no_prazo == "Atendida no prazo" or no_prazo == "Atendida com atraso"')
+  fig4 = px.bar(no_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo')  
+  fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
   st.plotly_chart(fig4, use_container_width = True)
+  
 
 
 col5, col6 = st.columns(2)
