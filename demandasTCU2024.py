@@ -30,10 +30,7 @@ col3, col4 = st.columns(2)
 with col3:
     tipo_demanda = df['tipo_processo'].value_counts()
     fig2 = px.bar(tipo_demanda, text_auto=True, color_discrete_sequence=['#183EFF'])
-    fig2.update_layout(
-        title='Demandas por tipo de Processo TCU',
-        xaxis_title="Tipo de Processo",
-        yaxis_title="Quantidade itens demandados") 
+    fig2.update_layout(title='Demandas por tipo de Processo TCU', xaxis_title="Tipo de Processo", yaxis_title="Quantidade itens demandados") 
     st.plotly_chart(fig2, use_container_width=True)
 
 with col4:
@@ -41,11 +38,6 @@ with col4:
   fig3 = px.bar(qnt_dem_respons, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig3.update_layout(title = 'Demandas por unidade do MPO', xaxis_title = "Unidade demandada", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig3, use_container_width = True)
-
-
-    
-  
-  
 
 
 col5, col6 = st.columns(2)
@@ -58,18 +50,12 @@ with col5:
   fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
   st.plotly_chart(fig4, use_container_width = True)
 
-    
-  
-  
 with col6:
   del_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
   filtro_del = del_acordao['Ato'].value_counts()
   fig5 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig5.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
   st.plotly_chart(fig5, use_container_width = True)
-
-    
- 
 
 col7, col8 = st.columns(2)
 
@@ -81,9 +67,6 @@ with col7:
   fig6.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
 
-    
-  
-
 with col8:
   tratamento_rec = df.query('Ato == "Recomendação"')
   tratamento_rec['Ato'].value_counts()
@@ -91,8 +74,7 @@ with col8:
   fig7 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
-
-    
+  
   col9, col10 = st.columns(2)
     
   with col19:
