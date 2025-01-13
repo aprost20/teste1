@@ -8,9 +8,13 @@ st.set_page_config(page_title="Demandas TCU 2024", layout="wide")
 df = pd.read_excel('Demandas_2024_1.xlsx', sheet_name=0)
 df2 = pd.read_excel('acordaos_atendidos_gestãoMPO_1.xlsx', sheet_name=0)
 
-st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 col1, col2 = st.columns([3,1])
+st.title("Demandas TCU recebidas pelo MPO em 2024")
+
+
+
+col1, col2 = st.columns(2)
 
 
 with col1:
