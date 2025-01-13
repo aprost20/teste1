@@ -16,7 +16,7 @@ with col1:
     quantidades_counts = df['estado_SISCOD'].value_counts().reset_index()
     quantidades_counts.columns = ['estado_SISCOD', 'quant_estado']
     fig1 = px.pie(quantidades_counts, values = 'quant_estado', names = 'estado_SISCOD', color_discrete_sequence= px.colors.qualitative.Light24)
-    fig1.update_layout(title = 'Situação atual das demandas TCU (em quantidade de itens')
+    fig1.update_layout(title = 'Situação atual das demandas TCU (em quantidade de itens)')
     fig1.update_traces(textposition = 'inside', textinfo = 'value+label')
     st.plotly_chart(fig1, use_container_width = True)
  
