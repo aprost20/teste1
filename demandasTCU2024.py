@@ -12,53 +12,68 @@ st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 col1, col2 = st.columns(2)
 
+
 with col1:
+    st.image("640px-MPOAssinatura.png", use_column_width = True)
+   
+ 
+with col2:
     quantidades_counts = df['estado_SISCOD'].value_counts().reset_index()
     quantidades_counts.columns = ['estado_SISCOD', 'quant_estado']
     fig1 = px.pie(quantidades_counts, values = 'quant_estado', names = 'estado_SISCOD', color_discrete_sequence= px.colors.qualitative.Light24)
     fig1.update_layout(title = 'Situação atual das demandas TCU (em quantidade de itens)')
     fig1.update_traces(textposition = 'inside', textinfo = 'value+label')
     st.plotly_chart(fig1, use_container_width = True)
- 
-with col2:
+   
+col3, col4 = st.columns(2)
+
+with col3:
     tipo_demanda = df['tipo_processo'].value_counts()
     fig2 = px.bar(tipo_demanda, text_auto=True, color_discrete_sequence=['#183EFF'])
     fig2.update_layout(
         title='Demandas por tipo de Processo TCU',
         xaxis_title="Tipo de Processo",
-        yaxis_title="Quantidade itens demandados"
-    )
+        yaxis_title="Quantidade itens demandados") 
     st.plotly_chart(fig2, use_container_width=True)
 
-col3, col4 = st.columns(2)
-
-with col3:
+with col4:
   qnt_dem_respons = df['responsavel'].value_counts()
   fig3 = px.bar(qnt_dem_respons, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig3.update_layout(title = 'Demandas por unidade do MPO', xaxis_title = "Unidade demandada", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig3, use_container_width = True)
 
-with col4:
- 
-  filtro_prazo = df.query('no_prazo == "Sem_prazo" or no_prazo == "Em andamento" or no_prazo == "Atendida no prazo" or no_prazo == "Atendida com atraso"')
-  quantidades_prazo = df['no_prazo'].value_counts().reset_index()
-  quantidades_prazo.columns = ['no_prazo', 'valor_no_prazo']
-  fig4 = px.bar(quantidades_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo', text_auto = True)  
-  fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
-  st.plotly_chart(fig4, use_container_width = True)
+
+    
+  
   
 
 
 col5, col6 = st.columns(2)
 
 with col5:
+  filtro_prazo = df.query('no_prazo == "Sem_prazo" or no_prazo == "Em andamento" or no_prazo == "Atendida no prazo" or no_prazo == "Atendida com atraso"')
+  quantidades_prazo = df['no_prazo'].value_counts().reset_index()
+  quantidades_prazo.columns = ['no_prazo', 'valor_no_prazo']
+  fig4 = px.bar(quantidades_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo', text_auto = True)  
+  fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
+  st.plotly_chart(fig4, use_container_width = True)
+
+    
+  
+  
+with col6:
   del_acordao = df.query('Ato == "Ciência" or Ato == "Determinação" or Ato == "Recomendação" or Ato == "Alerta"')
   filtro_del = del_acordao['Ato'].value_counts()
   fig5 = px.bar(filtro_del, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig5.update_layout(title = 'Deliberações de Acórdãos TCU', xaxis_title = "Quantidade de itens", yaxis_title = "Tipo de Deliberação")
   st.plotly_chart(fig5, use_container_width = True)
-  
-with col6:
+
+    
+ 
+
+col7, col8 = st.columns(2)
+
+with col7:
   tratamento_det = df.query('Ato == "Determinação"')
   tratamento_det['Ato'].value_counts()
   filtro_tto_det = tratamento_det['tratamento'].value_counts()
@@ -66,9 +81,10 @@ with col6:
   fig6.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
 
-col7, col8 = st.columns(2)
+    
+  
 
-with col7:
+with col8:
   tratamento_rec = df.query('Ato == "Recomendação"')
   tratamento_rec['Ato'].value_counts()
   filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
@@ -76,8 +92,10 @@ with col7:
   fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
 
-with col8:
-
+    
+  col9, col10 = st.columns(2)
+    
+  with col19:
   fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
   fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig8, use_container_width = True)
