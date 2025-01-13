@@ -79,7 +79,7 @@ with col7:
   fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
      
-  with col18:
+  with col8:
      fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
      fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
      st.plotly_chart(fig8, use_container_width = True)
