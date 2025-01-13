@@ -78,9 +78,9 @@ with col8:
   col9, col10 = st.columns(2)
     
   with col19:
-  fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
-  fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
-  st.plotly_chart(fig8, use_container_width = True)
+     fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
+     fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
+     st.plotly_chart(fig8, use_container_width = True)
   
 
 
