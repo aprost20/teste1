@@ -32,7 +32,7 @@ with col2:
 col3, col4 = st.columns(2)
 
 with col3:
-  qnt_dem_respons = df['responsavel'].value_counts().reset_index()
+  qnt_dem_respons = df['responsavel'].value_counts()
   fig3 = px.bar(qnt_dem_respons, text_auto = True, color_discrete_sequence=['#2237FF'])
   fig3.update_layout(title = 'Demandas por unidade do MPO', xaxis_title = "Unidade demandada", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig3, use_container_width = True)
