@@ -15,7 +15,7 @@ with col1:
     st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 with col2:
-    st.image("MPOAssinatura.png", widh = 300)
+    st.image("MPOAssinatura.png", width = 300)
 
 
 
