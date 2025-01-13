@@ -11,13 +11,13 @@ df2 = pd.read_excel('acordaos_atendidos_gestãoMPO_1.xlsx', sheet_name=0)
 
 col1, col2 = st.columns([3,1])
 
-with col1:
-    st.title("Demandas TCU recebidas pelo MPO em 2024")
-
 with col2:
     st.image("MPOAssinatura.png", width = 300)
 
+col1, col2 = st.columns([3,1])
 
+with col1:
+    st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 col1, col2 = st.columns(2)
 
