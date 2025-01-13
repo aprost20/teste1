@@ -40,7 +40,9 @@ with col3:
 with col4:
  
   filtro_prazo = df.query('no_prazo == "Sem_prazo" or no_prazo == "Em andamento" or no_prazo == "Atendida no prazo" or no_prazo == "Atendida com atraso"')
-  fig4 = px.bar(filtro_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo')  
+  quantidades_prazo = df['no_prazo'].value_counts().reset_index()
+  quantidades_prazo.columns = ['no_prazo', 'valor_no_prazo']
+  fig4 = px.bar(quantidades_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo')  
   fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
   st.plotly_chart(fig4, use_container_width = True)
   
