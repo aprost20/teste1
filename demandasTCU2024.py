@@ -21,7 +21,7 @@ with col2:
 
 col1, col2 = st.columns(2)
 
- with col1:
+with col1:
     quantidades_counts = df['estado_SISCOD'].value_counts().reset_index()
     quantidades_counts.columns = ['estado_SISCOD', 'quant_estado']
     fig1 = px.pie(quantidades_counts, values = 'quant_estado', names = 'estado_SISCOD', color_discrete_sequence= px.colors.qualitative.Light24)
