@@ -16,7 +16,7 @@ with col2:
 
 col1, col2 = st.columns([3,1])
 with col1:
-st.title("Demandas TCU recebidas pelo MPO em 2024")
+    st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 st.markdown("---")
 
