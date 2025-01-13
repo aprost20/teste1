@@ -15,17 +15,13 @@ with col1:
     st.title("Demandas TCU recebidas pelo MPO em 2024")
 
 with col2:
-    st.image("640px-MPOAssinatura_2.png", use_container_width = True)
+    st.image("640px-MPOAssinatura.png", use_container_width = True)
 
 
 
 col1, col2 = st.columns(2)
 
-
-
-   
- 
-with col2:
+ with col1:
     quantidades_counts = df['estado_SISCOD'].value_counts().reset_index()
     quantidades_counts.columns = ['estado_SISCOD', 'quant_estado']
     fig1 = px.pie(quantidades_counts, values = 'quant_estado', names = 'estado_SISCOD', color_discrete_sequence= px.colors.qualitative.Light24)
