@@ -42,7 +42,7 @@ with col4:
   filtro_prazo = df.query('no_prazo == "Sem_prazo" or no_prazo == "Em andamento" or no_prazo == "Atendida no prazo" or no_prazo == "Atendida com atraso"')
   quantidades_prazo = df['no_prazo'].value_counts().reset_index()
   quantidades_prazo.columns = ['no_prazo', 'valor_no_prazo']
-  fig4 = px.bar(quantidades_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo')  
+  fig4 = px.bar(quantidades_prazo, x = 'no_prazo', y = 'valor_no_prazo', color = 'no_prazo', text_auto = True)  
   fig4.update_layout(title = 'Atendimento às demandas quanto ao prazo', xaxis_title = "Prazo para atendimento", yaxis_title = "Quantidade de demandas")
   st.plotly_chart(fig4, use_container_width = True)
   
@@ -80,7 +80,7 @@ with col8:
   filtro_atend_acordao = df2.query('Ato == "Determinação" or Ato == "Recomendação"')
   quantidades_atend_acordao = df2['Ato'].value_counts().reset_index()
   quantidades_atend_acordao.columns = ['Ato', 'valor_ato']
-  fig8 = px.bar(atend_acordao, x = 'ano_acordao', y = 'valor_ato', color = 'Ato', text_auto = True)  
+  fig8 = px.bar(atend_acordao, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
   fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig8, use_container_width = True)
   
