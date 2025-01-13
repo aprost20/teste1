@@ -75,7 +75,7 @@ with col8:
   fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
   
-  col9, col10 = st.columns(2)
+  col9 = st.columns(2)
     
   with col19:
      fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
