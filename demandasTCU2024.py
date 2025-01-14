@@ -77,7 +77,7 @@ with col7:
   tratamento_rec['Ato'].value_counts()
   filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
   fig7 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig7.update_layout(title = 'TSituação das Recomendações envolvendo o MPO', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  fig7.update_layout(title = 'Situação das Recomendações envolvendo o MPO', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
      
   with col8:
