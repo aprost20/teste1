@@ -67,7 +67,7 @@ with col6:
   tratamento_det['Ato'].value_counts()
   filtro_tto_det = tratamento_det['tratamento'].value_counts()
   fig6 = px.bar(filtro_tto_det, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig6.update_layout(title = 'Tratamento de Determinações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  fig6.update_layout(title = 'Situação das Determinações envolvendo o MPO', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig6, use_container_width = True)
 
 col7, col8 = st.columns(2)
@@ -77,12 +77,12 @@ with col7:
   tratamento_rec['Ato'].value_counts()
   filtro_tto_rec = tratamento_rec['tratamento'].value_counts()
   fig7 = px.bar(filtro_tto_rec, text_auto = True, color_discrete_sequence=['#2237FF'])
-  fig7.update_layout(title = 'Tratamento de Recomendações', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
+  fig7.update_layout(title = 'TSituação das Recomendações envolvendo o MPO', xaxis_title = "Providências", yaxis_title = "Quantidade de itens")
   st.plotly_chart(fig7, use_container_width = True)
      
   with col8:
      fig8 = px.bar(df2, x = 'ano_acordao', y = 'valor_ato', color = 'Ato')  
-     fig8.update_layout(title = 'Deliberações implementadas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
+     fig8.update_layout(title = 'Deliberações do TCU respondidas pelo MPO desde o início da gestão', xaxis_title = "Ano da deliberação", yaxis_title = "Quantidade de itens")
      st.plotly_chart(fig8, use_container_width = True)
   
 
